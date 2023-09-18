@@ -1,22 +1,13 @@
-import { store } from '@/store';
+import { QueryParams } from '@/store/types.ts';
 
-export type RootState = ReturnType<typeof store.getState>;
-
-export type AppDispatch = typeof store.dispatch;
-
-export enum StoreLoadingEnum {
-  Idle = 'IDLE',
-  Pending = 'PENDING',
-  Succeeded = 'SUCCEEDED',
-  Failed = 'FAILED',
+export interface CountriesRequestDto {
+  yesterday?: QueryParams;
+  twoDaysAgo?: QueryParams;
+  sort?: string;
+  allowNull?: QueryParams;
 }
 
-export enum QueryParams {
-  True = 'true',
-  False = 'False',
-  Zero = '0',
-  One = '1',
-}
+export type CountriesResponseDto = Country[];
 
 export interface Country {
   updated: number;
