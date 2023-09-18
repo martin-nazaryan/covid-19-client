@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Image, TableColumnProps, Tag } from 'antd';
+import { Image, Space, TableColumnProps, Tag } from 'antd';
 
 import { Country } from '@/store/slices/countries/types.ts';
 
@@ -9,11 +9,19 @@ export const columns: TableColumnProps<Country>[] = [
     dataIndex: 'country',
     key: 'country',
     render: (value, record) => (
-      <Link to={`/countries/${record.countryInfo.iso2.toLowerCase()}`}>
-        {value}{' '}
-        <Tag>
-          <Image preview={false} width={16} alt={record.countryInfo.iso2} src={record.countryInfo.flag} />
-        </Tag>
+      <Link to={`/countries/${record.countryInfo.iso2}`}>
+        <Space>
+          <Tag>
+            <Image
+              preview={false}
+              width={14}
+              alt={record.countryInfo.iso2}
+              src={record.countryInfo.flag.replace('disease.sh', 'corona.lmao.ninja')}
+            />
+          </Tag>
+
+          {value}
+        </Space>
       </Link>
     ),
   },
