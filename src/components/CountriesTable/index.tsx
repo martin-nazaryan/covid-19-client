@@ -18,7 +18,7 @@ const CountriesTable: FC = () => {
   }, [dispatch]);
 
   return countriesLoading === StoreLoadingEnum.Pending ? (
-    <Skeleton paragraph={{ rows: 10 }} />
+    <Skeleton active paragraph={{ rows: 10 }} />
   ) : (
     <Table scroll={{ scrollToFirstRowOnChange: false }} rowKey="country" dataSource={countries} columns={columns} />
   );

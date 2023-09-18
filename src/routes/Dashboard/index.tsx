@@ -25,9 +25,14 @@ const Dashboard: FC = () => {
         <Col span={24}>
           <h2>Global info</h2>
           {infoLoading === StoreLoadingEnum.Pending ? (
-            <Skeleton paragraph={{ rows: 2 }} />
+            <Skeleton active paragraph={{ rows: 2 }} />
           ) : (
-            <StatisticsInfo cases={info?.cases || 0} recovered={info?.recovered || 0} deaths={info?.deaths || 0} />
+            <StatisticsInfo
+              cases={info?.cases || 0}
+              recovered={info?.recovered || 0}
+              deaths={info?.deaths || 0}
+              todayDeaths={info?.todayDeaths || 0}
+            />
           )}
         </Col>
 

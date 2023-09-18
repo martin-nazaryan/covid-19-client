@@ -25,4 +25,5 @@ export interface InfoResponseDto {
   recoveredPerOneMillion?: number;
   criticalPerOneMillion?: number;
   affectedCountries?: number;
+  todayDeaths?: number;
 }

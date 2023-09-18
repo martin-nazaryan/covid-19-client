@@ -36,7 +36,11 @@ const Country: FC = () => {
           <div className="container">
             <h1>{country?.country}</h1>
 
-            <Image preview={false} alt={country?.countryInfo.iso2} src={country?.countryInfo.flag}></Image>
+            <Image
+              preview={false}
+              alt={country?.countryInfo.iso2}
+              src={country?.countryInfo.flag.replace('disease.sh', 'corona.lmao.ninja')}
+            ></Image>
           </div>
 
           <Divider />
@@ -45,6 +49,7 @@ const Country: FC = () => {
             cases={country?.cases || 0}
             deaths={country?.deaths || 0}
             recovered={country?.recovered || 0}
+            todayDeaths={country?.todayDeaths || 0}
           />
         </>
       )}
