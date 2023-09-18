@@ -35,7 +35,6 @@ export const countrySlice = createSlice({
   initialState,
   reducers: {
     reset(state) {
-      console.log('OKOKOKOKOKOK');
       state.entity = null;
     },
   },
@@ -56,3 +55,4 @@ export const countrySlice = createSlice({
 });
 
 export const selectCountry = (state: RootState) => state.country.entity;
+export const selectCountryLoading = (state: RootState) => state.country.loading;
