@@ -12,6 +12,7 @@ export const columns: TableColumnProps<Country>[] = [
       <Link to={`/countries/${record.countryInfo.iso2}`}>
         <Space>
           <Tag>
+            {/* I aim to display flags sourced from corona.lmao.ninja; however, the corona.lmao.ninja API delivers flag URLs through disease.sh. Therefore, I am substituting the domain to present them. */}
             <Image
               preview={false}
               width={14}
