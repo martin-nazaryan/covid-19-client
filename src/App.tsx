@@ -1,9 +1,16 @@
-import './App.css'
+import './App.scss';
+
+import { Provider } from 'react-redux';
+
+import AppRoutes from '@/routes';
+import { store } from '@/store';
 
 function App() {
   return (
-      <h1>Hello</h1>
-  )
+    <Provider store={store}>
+      <AppRoutes />
+    </Provider>
+  );
 }
 
-export default App
+export default App;
