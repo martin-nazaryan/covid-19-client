@@ -52,3 +52,4 @@ export const infoSlice = createSlice({
 });
 
 export const selectInfo = (state: RootState) => state.info.entity;
+export const selectInfoLoading = (state: RootState) => state.info.loading;

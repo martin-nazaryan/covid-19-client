@@ -52,3 +52,4 @@ export const countriesSlice = createSlice({
 });
 
 export const selectCountries = (state: RootState) => state.countries.entities || [];
+export const selectCountriesLoading = (state: RootState) => state.countries.loading;

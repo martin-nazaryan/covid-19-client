@@ -1,8 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, isRejectedWithValue } from '@reduxjs/toolkit';
 
 import { countriesSlice } from './slices/countries';
 import { infoSlice } from './slices/info';
 import { countrySlice } from './slices/country';
+
+import { router } from '@/routes';
 
 export const store = configureStore({
   reducer: {
@@ -10,4 +12,12 @@ export const store = configureStore({
     countries: countriesSlice.reducer,
     country: countrySlice.reducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(() => (next) => async (action) => {
+      if (isRejectedWithValue(action)) {
+        router.navigate('/error');
+      }
+
+      return next(action);
+    }),
 });
